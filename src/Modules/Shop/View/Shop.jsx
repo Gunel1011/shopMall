@@ -1,14 +1,19 @@
-import React from "react";
-import product from "../../../db/product";
+import React, { useEffect, useState } from "react";
+import praductlist from "../../../db/product";
 import { data, Link } from "react-router-dom";
 const Shop = () => {
+  const [praducts, setProducts] = useState();
+
+  useEffect(() => {
+    setProducts(praductlist);
+  }, []);
   return (
     <section className="shop">
       <div className="container">
         <div className="row">
           <h2 className="titleShop">my shop</h2>
           <div className="card">
-            {product.map((item) => (
+            {praductlist.map((item) => (
               <Link
                 to={`/shop-details/${item.id}`}
                 className="productCard"

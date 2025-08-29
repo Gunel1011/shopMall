@@ -5,7 +5,6 @@ import { FaStar } from "react-icons/fa";
 
 const ShopDetails = () => {
   const { productId } = useParams();
-  const data = praducts.find((item) => item.id === Number(productId));
   const [prductDetails, setPrductDetails] = useState({
     id: 0,
     title: "",
